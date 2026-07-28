@@ -2,4 +2,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --orange-color: #f97316;
+  --dark-grey-color: #1f2937;
+  --white-color: #ffffff;
+  --light-grey-color: #f3f4f6;
+}
+
+.site-header {
+  display: flex;
+  background-color: var(--light-grey-color);
+  align-items: center;
+  /* justify-content: space-evenly; */
+  height: 8rem;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin-left: 150px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark-grey-color);
+  padding: 0 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--orange-color);
+}
+
+.hero-section {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("images/hero-4.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+}
+
+footer {
+  background-color: #c3f4c3;
+  min-height: 2rem;
 }
