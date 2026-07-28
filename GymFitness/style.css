@@ -8,7 +8,7 @@
 }
 
 :root {
-  --orange-color: #f97316;
+  --orange-color: #ef6b38;
   --dark-grey-color: #1f2937;
   --white-color: #ffffff;
   --light-grey-color: #f3f4f6;
@@ -41,14 +41,69 @@
   color: var(--orange-color);
 }
 
-.hero-section {
+
+
+.hero {
+  display: flex;
+  gap: 8rem;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url("images/hero-4.avif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 400px;
+  height: 500px;
+}
+
+.hero-headline {
+  color: var(--light-grey-color);
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 8rem;
+  padding: 20px 40px;
+}
+
+.highlight {
+  color: var(--orange-color);
+}
+
+.cta-text {
+  color: var(--light-grey-color);
+  font-size: 3rem;
+  padding: 20px 40px;
+  line-height: 2rem;
+}
+
+.tier-title, .tier-text {
+  color: var(--light-grey-color);
+
+}
+
+.cta-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 40px;
+  background-color: var(--white-color);
+  color: var(--orange-color);
+}
+
+.tier-wrapper {
+  align-items: center;
+  margin-top: 60px;
+}
+
+.tier-title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.tier-text {
+  font-style: italic;
 }
 
 footer {
