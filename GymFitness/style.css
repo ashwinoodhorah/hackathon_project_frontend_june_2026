@@ -23,19 +23,19 @@ body {
   background-color: var(--light-grey-color);
   align-items: center;
   justify-content: space-between;
-  max-height: 10rem;
+  padding: 0.75rem 3rem;
 }
 
 .logo {
-  max-width: 300px;
+  max-width: 180px;
   height: auto;
 }
 
 .nav ul {
   display: flex;
+  align-items: center;
   list-style-type: none;
-  flex-wrap: wrap;
-  gap: 5rem;
+  gap: 2.5rem;
 }
 
 .nav-link {
@@ -44,6 +44,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0 10px;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
@@ -54,10 +55,14 @@ body {
   position: relative;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 4rem 8rem;
+  width: 100%;
+  min-height: 80vh;
 }
 
-.hero-background {
+.hero-background,
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,11 +79,6 @@ body {
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.7) 0%,
@@ -115,6 +115,7 @@ body {
 .cta-btn-container {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .btn {
@@ -124,6 +125,12 @@ body {
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
+  background-color: var(--orange-color);
+  color: var(--white-color);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
   background-color: var(--light-grey-color);
   color: var(--orange-color);
 }
@@ -193,7 +200,7 @@ body {
 .card {
   flex: 1 1 300px;
   min-height: 400px;
-  background-color: #ffffff;
+  background-color: var(--white-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -219,13 +226,13 @@ body {
 .card-content h3 {
   margin: 0 0 8px 0;
   font-size: 1.25rem;
-  color: #333333;
+  color: var(--dark-grey-color);
 }
 
 .card-content p {
   margin: 0;
   font-size: 0.95rem;
-  color: #666666;
+  color: var(--dark-grey-color);
 }
 
 .pricing-section-container {
@@ -234,20 +241,21 @@ body {
 
 .membership-card-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .membership-card {
-  flex: 1 1 0;
+  flex: 1 1 10rem;
   background: rgba(73, 28, 8, 0.14);
-  backdrop-filter: blur(10px);
   color: #000;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .membership-card-title {
@@ -258,6 +266,8 @@ body {
 
 .membership-card-guide {
   margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .plan-features {
@@ -285,7 +295,7 @@ body {
 
 .about-hero-description {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--light-grey-color);
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 650px;
@@ -311,13 +321,24 @@ body {
 .vision-container {
   display: flex;
   justify-content: center;
-  border-radius: 12px;
-  transition: transform 0.2s ease;
 }
 
-.story-container:hover,
-.mission-container:hover,
-.vision-container:hover {
+.story,
+.vision,
+.mission {
+  padding: 20px;
+  background-color: var(--light-grey-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.story:hover,
+.mission:hover,
+.vision:hover {
   cursor: pointer;
   transform: translateY(-4px);
   box-shadow: 0 5px 10px rgba(239, 107, 56, 0.5);
@@ -329,24 +350,12 @@ body {
   gap: 2rem;
 }
 
-.story,
-.vision,
-.mission {
-  /* width: auto; */
-  padding: 20px;
-  background-color: #f3f4f6;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
 #personal-trainer {
   padding: 20px 0;
 }
 
 .contact-section {
-  background-color: #333333;
+  background-color: var(--dark-grey-color);
   color: var(--white-color);
   display: flex;
   flex-wrap: wrap;
@@ -358,9 +367,8 @@ body {
 
 .contact-form-container {
   padding: 30px;
-  border-radius: 8px;
   width: 100%;
-  max-width: 500px;
+  max-width: 30rem;
 }
 
 .contact-form-container h2 {
@@ -391,22 +399,16 @@ body {
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 15px;
-  color: #333333;
+  color: var(--dark-grey-color);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
-}
-
-/* Prevent horizontal resizing of the textarea box */
-.form-group textarea {
-  resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--orange-color);
   outline: none;
-  /* box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); */
 }
 
 .submit-btn {
@@ -437,11 +439,109 @@ caption {
 
 th,
 td {
-  /* border: 2px solid black; */
   padding: 1.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.3rem;
+}
+
+.login-container {
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--dark-grey-color);
+  /* background: transparent; */
+  backdrop-filter: blur(20px);
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.login-form h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--light-grey-color);
+}
+
+.form-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 0 0 0;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--light-grey-color);
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--orange-color);
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: #2563eb;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 24px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  cursor: pointer;
+  color: #6b7280;
 }
 
 footer {
@@ -494,4 +594,359 @@ footer {
 
 .tiktok-icon:hover {
   color: #000000;
+}
+
+@media (max-width: 1024px) {
+  /* Header */
+  .site-header {
+    padding: 1rem 2rem;
+  }
+
+  .logo {
+    max-width: 220px;
+  }
+
+  .nav ul {
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 3rem 4rem;
+  }
+
+  .hero-headline {
+    font-size: 3.2rem;
+    padding: 15px 20px;
+  }
+
+  .cta-text {
+    font-size: 1.4rem;
+    padding: 15px 20px;
+  }
+
+  .tier-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+  }
+
+  /* Cards */
+  .cards-section {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+
+  /* Pricing */
+  .membership-card-container {
+    padding: 0 2rem;
+  }
+
+  /* About */
+  .story-section-container {
+    padding: 3rem 2rem 1rem;
+  }
+
+  .mission-vision-container {
+    gap: 1.5rem;
+  }
+
+  /* Contact */
+  .contact-section {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .site-header {
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0rem;
+    gap: 0rem;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0 5px;
+  }
+
+  /* Hero */
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    min-height: 75vh;
+    gap: 2rem;
+  }
+
+  .hero-headline {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    padding: 10px;
+  }
+
+  .cta-text {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .right-hero {
+    width: 100%;
+  }
+
+  .tier-wrapper {
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .tier-title {
+    font-size: 2rem;
+  }
+
+  .cta-btn-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  /* Section headings */
+  .section-padding {
+    padding: 30px 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* Service cards */
+  .cards-section {
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card-img {
+    height: 220px;
+  }
+
+  /* Pricing */
+  .membership-card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .membership-card {
+    width: 100%;
+  }
+
+  .membership-card-title {
+    font-size: 2rem;
+  }
+
+  .membership-card-guide {
+    font-size: 1.2rem;
+  }
+
+  /* About hero */
+  .about-hero-title {
+    font-size: 3rem;
+  }
+
+  .about-hero-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Story */
+  .story-section-container {
+    padding: 2rem 1rem;
+  }
+
+  .mission-vision-container {
+    flex-direction: column;
+  }
+
+  .story,
+  .vision,
+  .mission {
+    width: 100%;
+  }
+
+  /* Trainers */
+  #personal-trainer {
+    padding: 10px 0;
+  }
+
+  /* Contact */
+  .contact-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .contact-info-container {
+    width: 100%;
+  }
+
+  .contact-form-container {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  th,
+  td {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  caption {
+    font-size: 1.7rem;
+  }
+
+  /* Login */
+  .login-container {
+    width: 100%;
+  }
+
+  .login-form {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .social-icons h4 {
+    font-size: 1.3rem;
+  }
+
+  .social-icons-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .fb-icon,
+  .insta-icon,
+  .youtube-icon,
+  .tiktok-icon,
+  .twitter-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 170px;
+  }
+
+  .nav ul {
+    gap: 0.6rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .tier-title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 9px 16px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .card-img {
+    height: 200px;
+  }
+
+  .membership-card-title {
+    font-size: 1.8rem;
+  }
+
+  .about-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .about-hero-description {
+    font-size: 0.9rem;
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
 }

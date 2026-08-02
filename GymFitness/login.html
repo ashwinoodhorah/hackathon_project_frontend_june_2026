@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerFit | Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="company-logo-container">
+        <img
+          src="images/logo-2.png"
+          alt="PowerFit Fitness Club logo"
+          class="logo"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="login-container">
+      <section class="hero-section">
+        <div class="hero-background">
+          <img
+            src="images/hero-5.avif"
+            alt="PowerFit Gym Facility"
+            class="hero-image"
+          />
+        </div>
+        <div class="overlay"></div>
+        <form action="#" class="login-form" method="post">
+          <h2 class="form-title">Welcome Back</h2>
+          <p class="form-subtitle">Please enter your details to sign in.</p>
+
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="username"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <div class="label-row">
+              <label for="password">Password</label>
+              <a href="#" class="forgot-link">Forgot?</a>
+            </div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="remember-me" name="remember" />
+            <label for="remember-me">Remember me</label>
+          </div>
+          <button type="button" class="submit-btn">Sign In</button>
+
+          <p class="form-subtitle">Not a member yet?</p>
+
+          <button type="button" class="submit-btn">Join Now</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="copyright-container">
+        <p>&copy; 2026 PowerFit. All rights reserved.</p>
+      </div>
+      <div class="social-icons">
+        <h4>Find us on:</h4>
+        <div class="social-icons-container">
+          <a href="#"><i class="fa-brands fa-facebook fb-icon"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram insta-icon"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter twitter-icon"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube youtube-icon"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok tiktok-icon"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
